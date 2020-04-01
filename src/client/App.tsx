@@ -7,6 +7,7 @@ import {
 import NavBar from './NavBar';
 import Main from './Main';
 import AddChirp from './AddChirp';
+import EditChirp from './EditChirp';
 
 const App: React.SFC = props => {
   return (
@@ -15,6 +16,7 @@ const App: React.SFC = props => {
 	  <Switch>
 		<Route exact path="/" component={Main}/>
 		<Route path="/add" component={AddChirp}/>
+    <Route path="/:username/admin" component={EditChirp}/>
 	  </Switch>
     </Router>
   );
