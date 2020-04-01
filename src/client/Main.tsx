@@ -40,7 +40,7 @@ const Main: React.SFC = props => {
               <p>{chirp.message}</p>
             </div>
             <div className="card-footer">
-                <NavLink to={`/${chirp.username}/admin`}>Admin Options</NavLink>
+                <NavLink to={`/${chirp.username}/admin`} className="nav-link text-dark">Admin Options</NavLink>
             </div>
           </div>
         </div>
