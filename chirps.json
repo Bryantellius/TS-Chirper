@@ -1,1 +1,6 @@
-{ "0": { "username": "Benjamin", "message": "Hola" }, "nextid": 1 }
+{
+  "0": { "username": "Benjamin", "message": "Hola" },
+  "1": { "username": "Mae", "message": "M&M's are delicious" },
+  "2": { "username": "Will", "message": "Catchow" },
+  "nextid": 3
+}
