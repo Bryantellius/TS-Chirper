@@ -1,12 +1,1 @@
-{
-  "0": { "username": "Benjamin", "message": "Hola" },
-  "1": { "username": "Mae", "message": "M&M's are delicious" },
-  "2": { "username": "Will", "message": "Catchow" },
-  "3": { "username": "Carol Ann", "message": "BOATS BOATS BOATS!!" },
-  "4": {
-    "username": "Mom",
-    "message": "Favorite drink is... Diet Coke. Did you know?"
-  },
-  "5": { "username": "Test", "message": "3.0" },
-  "nextid": 6
-}
+{"0":{"username":"Benjamin","message":"Hola"},"1":{"username":"Mae","message":"M&M's are delicious"},"2":{"username":"Will","message":"Catchow"},"3":{"username":"Carol Ann","message":"BOATS BOATS BOATS!!"},"4":{"username":"Mom","message":"Favorite drink is... Diet Coke. Did you know?"},"nextid":7}
