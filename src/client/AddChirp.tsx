@@ -3,7 +3,6 @@ import $ from "jquery";
 
 const AddChirp: React.SFC = props => {
   const post = () => {
-    console.log(`addBtn pressed`);
     let chirp = {
       username: $("#chirpAuthor").val(),
       message: $("#chirpBody").val()
@@ -37,7 +36,7 @@ const AddChirp: React.SFC = props => {
           placeholder="Enter Text"
         ></textarea>
       </div>
-      <button onClick={post} className="btn btn-success">
+      <button onClick={post} className="btn btn-primary">
         Post
       </button>
     </div>
