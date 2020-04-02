@@ -1,5 +1,6 @@
 import $ from "jquery";
 import * as React from "react";
+import * as Moment from "moment";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -26,12 +27,11 @@ const Main: React.SFC = props => {
     getChirps();
   }, []);
 
-  const timeline = chirps.map(chirp => {
+  const timeline = chirps.reverse().map(chirp => {
     if (chirp) {
       let key = `${chirp.username}${Math.floor(Math.random() * 10)}`;
-      console.log(key);
       return (
-        <div key={key} className="card">
+        <div key={key} className="card my-2">
           <div className="card-body">
             <div className="card-title">
               <h3>{chirp.username}</h3>
@@ -39,8 +39,14 @@ const Main: React.SFC = props => {
             <div className="card-text">
               <p>{chirp.message}</p>
             </div>
-            <div className="card-footer">
-                <NavLink to={`/${chirp.username}/admin`} className="nav-link text-dark">Admin Options</NavLink>
+            <div className="card-footer d-flex justify-content-between">
+              <span id="date">{Moment().format()}</span>
+              <NavLink
+                to={`/${chirp.username}/admin`}
+                className="nav-link btn btn-sm btn-outline-info rounded text-dark"
+              >
+                Admin Options
+              </NavLink>
             </div>
           </div>
         </div>
@@ -49,10 +55,10 @@ const Main: React.SFC = props => {
   });
 
   return (
-    <section id="chirpsDiv">
-      <h1>Above Chirps</h1>
-      <>{timeline}</>
-      <h1>Below Chirps</h1>
+    <section id="chirpsDiv" className="d-flex flex-column align-items-center">
+      <h6 className="alert alert-info w-50 my-1 text-center">Timeline</h6>
+      <div className="w-50">{timeline}</div>
+      <h6 className="alert alert-info w-50 my-1 text-center">Below Chirps</h6>
     </section>
   );
 };
