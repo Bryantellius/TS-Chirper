@@ -1,1 +1,18 @@
-{"0":{"username":"Benjamin","message":"Hola"},"1":{"username":"Mae","message":"M&M's are delicious"},"2":{"username":"Will","message":"Catchow"},"3":{"username":"Carol Ann","message":"BOATS BOATS BOATS!!"},"4":{"username":"Mom","message":"Favorite drink is... Diet Coke. Did you know?"},"nextid":7}
+{
+  "0": {
+    "username": "Marshall Eriksen",
+    "message": "That cake. Best cake I ever had. Seriously, my stomach was like, ‘Hey bro, I don’t know what you’re eating cause I don’t have any eyes but it’s basically awesome, so keep sending it down Gullet Alley.",
+    "time": "April 2, 2020 5:10 PM"
+  },
+  "1": {
+    "username": "Barney Stinson",
+    "message": "It’s going to be legen — wait for it — dary.",
+    "time": "April 2, 2020 6:44 PM"
+  },
+  "2": {
+    "username": "Ted Mosby",
+    "message": "I wound up shame-eating the whole pizza. I woke up all greasy and sweaty. My sheets looked like what they wrap deli sandwiches in. Maybe I should join a gym. Do you go to a gym?",
+    "time": "April 2, 2020 7:14 PM"
+  },
+  "nextid": 3
+}
