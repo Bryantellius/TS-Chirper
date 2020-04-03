@@ -1,11 +1,13 @@
 import * as React from "react";
 import $ from "jquery";
+import * as moment from "moment";
 
 const AddChirp: React.SFC = props => {
   const post = () => {
     let chirp = {
       username: $("#chirpAuthor").val(),
-      message: $("#chirpBody").val()
+      message: $("#chirpBody").val(),
+      time: moment().format("LLL")
     };
     $.ajax({
       method: "POST",

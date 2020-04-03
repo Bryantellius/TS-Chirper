@@ -1,6 +1,5 @@
 import * as React from "react";
 import $ from "jquery";
-import * as Moment from "moment";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -31,7 +30,7 @@ const Main: React.SFC = props => {
                 <p>{data[key].message}</p>
               </div>
               <div className="card-footer d-flex justify-content-between">
-                <span id="date">{Moment().format()}</span>
+                <span id="date">{data[key].time}</span>
                 <NavLink
                   to={`/${key}/admin`}
                   className="nav-link btn btn-sm btn-outline-info rounded text-dark"
@@ -54,7 +53,7 @@ const Main: React.SFC = props => {
     <section id="chirpsDiv" className="d-flex flex-column align-items-center">
       <h6 className="alert alert-info w-50 my-1 text-center">Timeline</h6>
       <div className="w-50">{chirps}</div>
-      <h6 className="alert alert-info w-50 my-1 text-center">Below Chirps</h6>
+      <a href="#topNav" className="nav-link alert alert-info w-50 my-1 text-center">To Top</a>
     </section>
   );
 };

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar: React.SFC = props => {
   return (
-    <div className="d-flex justify-content-between p-2 bg-success">
+    <div id="topNav" className="d-flex justify-content-between p-2 bg-success">
       <h3>Chirper</h3>
       <div className="d-flex justify-content-around align-items-center w-25">
         <NavLink className="nav-link border border-dark rounded text-dark" to="/">
