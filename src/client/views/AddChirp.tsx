@@ -1,21 +1,24 @@
 import * as React from "react";
-import $ from "jquery";
+import { useState } from "react";
 import * as moment from "moment";
 
-const AddChirp: React.SFC = props => {
+const AddChirp: React.FC<IAddChirpProps> = (props) => {
+  const [username, setUsername] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   const post = () => {
     let chirp = {
-      username: $("#chirpAuthor").val(),
-      message: $("#chirpBody").val(),
-      time: moment().format("LLL")
+      username,
+      message,
+      time: moment().format("LLL"),
     };
-    $.ajax({
+
+    fetch("/api/chirps", {
       method: "POST",
-      url: "http://localhost:3000/api/chirps",
-      contentType: "application/json",
-      data: JSON.stringify(chirp)
-    }).done(res => {
-      console.log(res);
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(chirp),
     });
     history.back();
   };
@@ -29,6 +32,8 @@ const AddChirp: React.SFC = props => {
           className="form-control"
           id="chirpAuthor"
           placeholder="Name"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         ></input>
       </div>
       <div className="form-group w-50">
@@ -36,6 +41,8 @@ const AddChirp: React.SFC = props => {
           className="form-control"
           id="chirpBody"
           placeholder="Enter Text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
         ></textarea>
       </div>
       <button onClick={post} className="btn btn-primary">
@@ -44,5 +51,7 @@ const AddChirp: React.SFC = props => {
     </div>
   );
 };
+
+interface IAddChirpProps {}
 
 export default AddChirp;

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import NavBar from "./NavBar";
-import Main from "./Main";
-import AddChirp from "./AddChirp";
-import EditChirp from "./EditChirp";
+import NavBar from "./components/NavBar";
+import Main from "./views/Main";
+import AddChirp from "./views/AddChirp";
+import EditChirp from "./views/EditChirp";
 
 const App: React.SFC = props => {
   return (

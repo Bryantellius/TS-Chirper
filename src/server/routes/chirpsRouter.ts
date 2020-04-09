@@ -2,17 +2,24 @@ import * as express from "express";
 import * as chirpStore from "../chirpstore";
 const router = express.Router();
 
-// router.get("/hello", (req, res, next) => {
-//   res.json("World");
-// });
-
 router.get("/:id?", (req, res) => {
   try {
     let id = req.params.id;
     if (id) {
       res.json(chirpStore.GetChirp(id))
     } else {
-      res.json(chirpStore.GetChirps());
+      const data = chirpStore.GetChirps()
+      const chirps = Object.keys(data).map(key => {
+        return {
+          id: key,
+          username: data[key].username,
+          message: data[key].message,
+          time: data[key].time
+        }
+      })
+      chirps.pop();
+      chirps.reverse()
+      res.json(chirps);
     }
   } catch (error) {
     console.log(`Error attempting to GET`);
